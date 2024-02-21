@@ -200,7 +200,7 @@
                     </div>
 
                 </div>
-                <div id="content3" class="content">
+                <div id="content3" class="content p-3">
 
                     <div class="row">
 
@@ -257,13 +257,13 @@
 
     <script>
         $(document).ready(function () {
-            $('.slider').slick({
-                infinite: true,
-                arrows: true,
-                slidesToShow: 4,
-                slidesToScroll: 1
+            $('.nav-item').click(function () {
+                var target = $(this).data('target');
+                $('.content').fadeOut(
+                300); // Oculta todos los contenidos con una animación de desvanecimiento
+                $('#' + target).delay(500).fadeIn(
+                300); // Muestra el contenido correspondiente después de un retraso de 300 ms
             });
-
         });
     </script>
 

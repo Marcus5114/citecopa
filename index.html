@@ -19,24 +19,27 @@
     <style>
         .underline {
             position: relative;
+            z-index: 1;
             cursor: pointer;
         }
 
         .underline::before {
             content: '';
             position: absolute;
-            left: 50%;
+            z-index: -1;
+            top: 0;
             bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #fc2f70;
-            transform-origin: center;
-            transform: translate(-50%, 0) scaleX(0);
-            transition: transform 0.3s ease-in-out;
+            left: -0.25em;
+            right: -0.25em;
+            background-color: #2f7efc;
+            transform-origin: bottom center;
+            transform: scaleY(0.1);
+            transition: all 0.1s ease-in-out;
         }
 
         .underline:hover::before {
-            transform: translate(-50%, 0) scaleX(1);
+            transform: scaleY(1);
+            background-color: #2f7efc80;
         }
 
         .content {
@@ -52,10 +55,25 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row" style="height: 100vh;">
-            <div class="col-md-3 bg-warning">
-                <div class="p-5 border sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-secondary d-block d-md-none">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CITECOPA</a>
+
+            <button class="navbar-toggler d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas w-75 offcanvas-start" tabindex="-1" id="menu"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h3>CITECOPA</h3>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+
                     <ul class="nav flex-column">
                         <li class="nav-item py-2" data-target="content1">
                             <span class="underline">INICIO</span>
@@ -78,25 +96,81 @@
                             <span class="underline">CONTACTO</span>
                         </li>
                     </ul>
+
                 </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+
+
+        <div class="row" style="height: 100vh;">
+            <div class="col-md-3 d-none d-md-block border-end border-3 border-info-subtle">
+
+                <div class="sticky-top">
+                    <div class="p-5">
+                        <ul class="nav flex-column">
+                            <li class="nav-item py-2" data-target="content1">
+                                <span class="underline">INICIO</span>
+                            </li>
+                            <li class="nav-item py-2" data-target="content2">
+                                <span class="underline">NOSOTROS</span>
+                            </li>
+                            <li class="nav-item py-2" data-target="content3">
+                                <span class="underline">FORMÁ PARTE</span>
+                            </li>
+                            <li class="nav-item py-2" data-target="content4">
+                                <span class="underline">PRENSA</span>
+                            </li>
+
+                            <li class="nav-item py-2" data-target="content5">
+                                <span class="underline">DONÁ</span>
+                            </li>
+
+                            <li class="nav-item py-2" data-target="content6">
+                                <span class="underline">CONTACTO</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-5 my-5 text-center">
+                        <div class="btn-group">
+
+                            <button class="btn btn-outline-success">1</button>
+                            <button class="btn btn-outline-success">2</button>
+                            <button class="btn btn-outline-success">3</button>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-9">
-                <div id="content1" class="content p-3" >
-                    
+                <div id="content1" class="content p-3">
+
                     <div class="overflow-y-auto">
                         <div class="text-center">
-                            
+
                             <h1 class="display-3">CITECOPA</h1>
                             <h3>Fundación de Ciencia y Tecnología <br> para la Comunidad Patagónica</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos optio ad aperiam perferendis, debitis quia molestias ratione ullam, delectus sunt omnis, quam labore est error illo in aliquam nisi enim.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque deleniti beatae quo asperiores reprehenderit! Beatae voluptatem quos, explicabo at quod autem iure enim et error, repellat quibusdam! Praesentium, laudantium.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos optio ad aperiam
+                                perferendis, debitis quia molestias ratione ullam, delectus sunt omnis, quam labore est
+                                error illo in aliquam nisi enim.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque deleniti beatae quo
+                                asperiores reprehenderit! Beatae voluptatem quos, explicabo at quod autem iure enim et
+                                error, repellat quibusdam! Praesentium, laudantium.</p>
                         </div>
 
                         <hr>
 
                         <div class="text-center">
 
-                            <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt="" class="img-fluid">
+                            <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt=""
+                                class="img-fluid">
 
                         </div>
 
@@ -104,7 +178,8 @@
 
                         <div class="text-center">
 
-                            <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt="" class="img-fluid">
+                            <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt=""
+                                class="img-fluid">
 
                         </div>
 
@@ -119,7 +194,7 @@
 
                 </div>
                 <div id="content2" class="content p-3">
-                    
+
                     <div class="text-center">
 
                         <img src="https://placehold.co/1920x400?text=Banner" alt="" class="img-fluid">
@@ -129,20 +204,25 @@
 
                     <div class="text-center">
                         <h1>Titulo</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit ut architecto hic dolorum doloremque velit non. Alias vitae voluptates consectetur architecto. Minima veniam non quibusdam consectetur perferendis molestiae cum.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit ut architecto hic
+                            dolorum doloremque velit non. Alias vitae voluptates consectetur architecto. Minima veniam
+                            non quibusdam consectetur perferendis molestiae cum.</p>
                     </div>
 
                 </div>
                 <div id="content3" class="content">
-                    
+
                     <div class="row">
 
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Patrocinador" alt="" class="img-fluid"></div>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Patrocinador" alt=""
+                                class="img-fluid"></div>
                         <div class="col-md-8">
                             <h5>
                                 Patrocinador
                             </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
+                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
+                                cupiditate harum ipsum nihil veniam!</p>
 
                             <button class="btn btn-outline-primary w-100">Formá Parte</button>
                         </div>
@@ -152,19 +232,25 @@
                             <h5>
                                 Colaborador
                             </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
+                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
+                                cupiditate harum ipsum nihil veniam!</p>
 
                             <button class="btn btn-outline-primary w-100">Formá Parte</button>
                         </div>
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Colaborador" alt="" class="img-fluid"></div>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Colaborador" alt=""
+                                class="img-fluid"></div>
                         <br>
                         <hr>
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Voluntario" alt="" class="img-fluid"></div>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Voluntario" alt=""
+                                class="img-fluid"></div>
                         <div class="col-md-8">
                             <h5>
                                 Voluntario
                             </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
+                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
+                                cupiditate harum ipsum nihil veniam!</p>
 
                             <button class="btn btn-outline-primary w-100">Formá Parte</button>
                         </div>
@@ -180,10 +266,10 @@
 
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.slider').slick({
                 infinite: true,
-                arrows:true,
+                arrows: true,
                 slidesToShow: 4,
                 slidesToScroll: 1
             });
@@ -198,7 +284,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
 
-    
+
 
 </body>
 

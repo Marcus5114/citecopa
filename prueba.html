@@ -1,127 +1,197 @@
-<!DOCTYPE html>
-<html class="no-js">
+<!doctype html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <title>Pruebas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <title>Macy.js - A lightweight, dependency free, JavaScript masonry layout library</title>
 
-    <link rel="stylesheet" href="assets/css/macy.css">
-    <link rel="stylesheet" href="assets/css/icons.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" rel="stylesheet">
+
+    <style>
+        .underline {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .underline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fc2f70;
+            transform-origin: center;
+            transform: translate(-50%, 0) scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .underline:hover::before {
+            transform: translate(-50%, 0) scaleX(1);
+        }
+
+        .content {
+            display: none;
+        }
+
+        #content1 {
+            display: block;
+        }
+    </style>
+
 </head>
-<body>
-    <header class="hero">
-        <div class="container">
-            <img class="logo" src="assets/img/macy-logo.svg" style="width: 146px" alt="">
-            <h1 class="hero__title">Macy.js is a lightweight, dependency free, 2kb (gzipped) masonry layout library. Designed for hassle free configuration and use for your content.</h1>
-            <a href="https://github.com/bigbitecreative/macy.js/" class="btn has-icon icon-github">Download and docs on GitHub</a>
-        </div>
-    </header>
 
-    <main class="main" role="main">
-        <section class="section">
-            <div class="container">
-                <ul class="feature-list">
-                    <li>User definable breakpoints</li><!--
-                    --><li>Works with CSS transitions</li><!--
-                    --><li>Simple event API</li><!--
-                    --><li>No jQuery or other dependencies</li>
-                </ul>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <div id="macy-container">
-                    <div class="demo" macy-complete="1"><img src="http://unsplash.it/557/387/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/602/660/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/660/646/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/741/375/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/813/455/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/470/896/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/664/653/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/708/313/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/738/578/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/458/482/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/439/856/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/549/315/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/877/693/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/542/805/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/683/445/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/616/340/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/533/317/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/700/894/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/663/541/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/368/575/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/696/538/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/571/460/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/892/379/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/473/729/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/657/632/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/311/796/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/588/561/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/812/564/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/353/454/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/468/737/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/600/784/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/777/833/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/801/576/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/826/564/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/390/240/" alt="" class="demo-image"></div>
-                    <div class="demo"><img src="http://placerabbit.com/390/130/" alt="" class="demo-image"></div>
+<body>
+
+    <div class="container-fluid">
+        <div class="row" style="height: 100vh;">
+            <div class="col-md-3 bg-warning">
+                <div class="p-5 border sticky-top">
+                    <ul class="nav flex-column">
+                        <li class="nav-item py-2" data-target="content1">
+                            <span class="underline">INICIO</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content2">
+                            <span class="underline">NOSOTROS</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content3">
+                            <span class="underline">FORMÁ PARTE</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content4">
+                            <span class="underline">PRENSA</span>
+                        </li>
+
+                        <li class="nav-item py-2" data-target="content4">
+                            <span class="underline">DONÁ</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="col-md-9">
+                <div id="content1" class="content p-3" >
+                    
+                    <div class="overflow-y-auto">
+                        <div class="text-center">
+                            
+                            <h1 class="display-3">CITECOPA</h1>
+                            <h3>Fundación de Ciencia y Tecnología <br> para la Comunidad Patagónica</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos optio ad aperiam perferendis, debitis quia molestias ratione ullam, delectus sunt omnis, quam labore est error illo in aliquam nisi enim.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque deleniti beatae quo asperiores reprehenderit! Beatae voluptatem quos, explicabo at quod autem iure enim et error, repellat quibusdam! Praesentium, laudantium.</p>
+                        </div>
 
-    <footer class="footer">
-        <div class="container">
-            Made by <a href="//bigbitecreative.com">Big Bite Creative</a>
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt="" class="img-fluid">
+
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt="" class="img-fluid">
+
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Acceso a Noticias" alt="" class="img-fluid">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div id="content2" class="content p-3">
+                    
+                    <div class="text-center">
+
+                        <img src="https://placehold.co/1920x400?text=Banner" alt="" class="img-fluid">
+
+                    </div>
+                    <br>
+
+                    <div class="text-center">
+                        <h1>Titulo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit ut architecto hic dolorum doloremque velit non. Alias vitae voluptates consectetur architecto. Minima veniam non quibusdam consectetur perferendis molestiae cum.</p>
+                    </div>
+
+                </div>
+                <div id="content3" class="content">
+                    
+                    <div class="row">
+
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Patrocinador" alt="" class="img-fluid"></div>
+                        <div class="col-md-8">
+                            <h5>
+                                Patrocinador
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+                        <br>
+                        <hr>
+                        <div class="col-md-8 text-end">
+                            <h5>
+                                Colaborador
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Colaborador" alt="" class="img-fluid"></div>
+                        <br>
+                        <hr>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Voluntario" alt="" class="img-fluid"></div>
+                        <div class="col-md-8">
+                            <h5>
+                                Voluntario
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="content4" class="content">Contenido del Item 4</div>
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/macy@2.5.1/dist/macy.min.js"></script>
+
     <script>
-        var masonry = new Macy({
-            container: '#macy-container',
-            trueOrder: false,
-            waitForImages: false,
-            useOwnImageLoader: false,
-            debug: true,
-            mobileFirst: true,
-            columns: 1,
-            margin: {
-                y: 16,
-                x: '2%',
-            },
-            breakAt: {
-                1200: 6,
-                940: 5,
-                520: 3,
-                400: 2
-            },
+        $(document).ready(function () {
+            $('.nav-item').click(function () {
+                var target = $(this).data('target');
+                $('.content').fadeOut(
+                300); // Oculta todos los contenidos con una animación de desvanecimiento
+                $('#' + target).delay(500).fadeIn(
+                300); // Muestra el contenido correspondiente después de un retraso de 300 ms
+            });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
 </body>
+
 </html>

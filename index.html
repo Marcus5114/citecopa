@@ -1,258 +1,200 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fundación CITECOPA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Pruebas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 
     <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" rel="stylesheet">
 
     <style>
-        .grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
+        .underline {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .underline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fc2f70;
+            transform-origin: center;
+            transform: translate(-50%, 0) scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .underline:hover::before {
+            transform: translate(-50%, 0) scaleX(1);
+        }
+
+        .content {
+            display: none;
+        }
+
+        #content1 {
+            display: block;
+        }
     </style>
 
-  </head>
-  <body>
-    
-    <div>
-        <img src="https://placehold.co/1920x300?text=Banner" alt="" class="img-fluid">
-    </div>
-    <br>
+</head>
+
+<body>
+
     <div class="container-fluid">
+        <div class="row" style="height: 100vh;">
+            <div class="col-md-3 bg-warning">
+                <div class="p-5 border sticky-top">
+                    <ul class="nav flex-column">
+                        <li class="nav-item py-2" data-target="content1">
+                            <span class="underline">INICIO</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content2">
+                            <span class="underline">NOSOTROS</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content3">
+                            <span class="underline">FORMÁ PARTE</span>
+                        </li>
+                        <li class="nav-item py-2" data-target="content4">
+                            <span class="underline">PRENSA</span>
+                        </li>
 
-        <div class="container">
-
-            <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
-                <li class="nav-item mx-2" role="presentation">
-                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-inicio" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Inicio
-                    </button>
-                </li>
-
-                <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-nosotros" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Nosotros
-                    </button>
-                </li>
-
-                <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-galeria" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Galeria
-                    </button>
-                </li>
-
-                <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-forma" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Formá Parte
-                    </button>
-                </li>
-
-                <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-donaciones" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Donaciones
-                    </button>
-                </li>
-
-                <li class="nav-item mx-2" role="presentation">
-                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#tab-contacto" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Contacto
-                    </button>
-                </li>
-                
-            </ul>
-            <br><br>
-            <div class="tab-content" id="myTabContent">
-                
-                
-                <!-- TAB INICIO -->
-                <!-- ##################################### -->
-                <div class="tab-pane fade show active" id="tab-inicio" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                    <div class="text-center">
-
-                        <h1>Fundación CITECOPA</h1>
-                        <h4>Fundación de Ciencia, Tecnología y Comunidad Patagónica </h4>
-                        <br>
-
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem perferendis necessitatibus alias animi illum a assumenda quisquam modi, saepe numquam distinctio maiores magnam laborum repellat at. Vero deleniti quaerat autem.
-                        </p>
-                    </div>
-
-                    <hr>
-                    <br>
-
-                    <div class="text-center">
-
-                        <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt="" class="img-fluid">
-
-                    </div>
-
-                    <hr>
-                    <br>
-
-                    <div class="d-flex">
-                        <h3 class="flex-fill">Noticias Destacadas</h3> <h5>Ver Todas</h5>
-                    </div>
-                    
-                    <div class="row slider">
-
-                        <div class="col">
-                            <div class="card p-3 border-0" style="min-height: 25rem;">
-                            <img src="https://placehold.co/200x200?text=Noticia" class="card-img-top" alt="...">
-                                <div class="card-body border-bottom">
-                                    <h6 class="card-title">Titulo de la Noticia</h6>                                                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card p-3 border-0" style="min-height: 25rem;">
-                            <img src="https://placehold.co/200x200?text=Noticia" class="card-img-top" alt="...">
-                                <div class="card-body border-bottom">
-                                    <h6 class="card-title">Titulo de la Noticia</h6>                                                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card p-3 border-0" style="min-height: 25rem;">
-                            <img src="https://placehold.co/200x200?text=Noticia" class="card-img-top" alt="...">
-                                <div class="card-body border-bottom">
-                                    <h6 class="card-title">Titulo de la Noticia</h6>                                                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card p-3 border-0" style="min-height: 25rem;">
-                            <img src="https://placehold.co/200x200?text=Noticia" class="card-img-top" alt="...">
-                                <div class="card-body border-bottom">
-                                    <h6 class="card-title">Titulo de la Noticia</h6>                                                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card p-3 border-0" style="min-height: 25rem;">
-                            <img src="https://placehold.co/200x200?text=Noticia" class="card-img-top" alt="...">
-                                <div class="card-body border-bottom">
-                                    <h6 class="card-title">Titulo de la Noticia</h6>                                                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-
-                    <hr>
-                    <br>
-
-                    <div class="text-center">
-
-                        <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt="" class="img-fluid">
-
-                    </div>
-
-                    
+                        <li class="nav-item py-2" data-target="content4">
+                            <span class="underline">DONÁ</span>
+                        </li>
+                    </ul>
                 </div>
-                <!-- ##################################### -->
-
-                <!-- TAB NOSOTROS -->
-                <!-- ##################################### -->
-                <div class="tab-pane fade" id="tab-nosotros" role="tabpanel" aria-labelledby="contact-tab" tabindex="2">
-                    <div class="text-center">
-
-                        <img src="https://placeholder.co/1920x400?text=Banner" alt="" class="img-fluid">
-                        <br><br>
-
-                        <h1>Titular</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus numquam pariatur iste corrupti! Nam cupiditate accusantium atque, nisi quam voluptas delectus? Rerum aperiam commodi et dolor esse alias inventore! Non.</p>
-                    </div>
-                    <br>                  
-                    
-                </div>
-                <!-- ##################################### -->
-
-                <!-- TAB GALERIA -->
-                <!-- ##################################### -->
-                <div class="tab-pane fade" id="tab-galeria" role="tabpanel" aria-labelledby="disabled-tab" tabindex="3">
-                    
-                    
-
-                </div>
-                <!-- ##################################### -->
-                
-                
-                <!-- ##################################### -->
-                <div class="tab-pane fade" id="tab-forma" role="tabpanel" aria-labelledby="disabled-tab" tabindex="4">
-                    
-                    <div class="text-center">
-
-                        <h1>Titular</h1>
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam saepe ullam earum enim nulla ipsa voluptas hic repudiandae, unde, eaque natus vel quod dolor culpa molestias eos possimus odit quidem?</h5>
-
-                    </div>
-                    <hr>
-
-                    <div class="row row-cols-1 row-cols-md-4 justify-content-center">
-
-                        <div class="col">
-                            <button class="btn btn-outline-dark p-5 w-100 btn-lg">Patrocinador</button>                          
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-outline-dark p-5 w-100 btn-lg">Colaborador</button>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-outline-dark p-5 w-100 btn-lg">Voluntario</button>
-                        </div>
-                        
-
-                    </div>
-
-                </div>
-                <!-- ##################################### -->
-                <div class="tab-pane fade" id="tab-donaciones" role="tabpanel" aria-labelledby="disabled-tab" tabindex="5">
-                    Donaciones
-                </div>
-                <!-- ##################################### -->
-
-
-                <!-- ##################################### -->
-                <div class="tab-pane fade" id="tab-contacto" role="tabpanel" aria-labelledby="disabled-tab" tabindex="6">
-                    Contacto
-                </div>
-                <!-- ##################################### -->
             </div>
+            <div class="col-md-9">
+                <div id="content1" class="content p-3" >
+                    
+                    <div class="overflow-y-auto">
+                        <div class="text-center">
+                            
+                            <h1 class="display-3">CITECOPA</h1>
+                            <h3>Fundación de Ciencia y Tecnología <br> para la Comunidad Patagónica</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos optio ad aperiam perferendis, debitis quia molestias ratione ullam, delectus sunt omnis, quam labore est error illo in aliquam nisi enim.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque deleniti beatae quo asperiores reprehenderit! Beatae voluptatem quos, explicabo at quod autem iure enim et error, repellat quibusdam! Praesentium, laudantium.</p>
+                        </div>
 
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt="" class="img-fluid">
+
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt="" class="img-fluid">
+
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+
+                            <img src="https://placehold.co/1920x400?text=Acceso a Noticias" alt="" class="img-fluid">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div id="content2" class="content p-3">
+                    
+                    <div class="text-center">
+
+                        <img src="https://placehold.co/1920x400?text=Banner" alt="" class="img-fluid">
+
+                    </div>
+                    <br>
+
+                    <div class="text-center">
+                        <h1>Titulo</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit ut architecto hic dolorum doloremque velit non. Alias vitae voluptates consectetur architecto. Minima veniam non quibusdam consectetur perferendis molestiae cum.</p>
+                    </div>
+
+                </div>
+                <div id="content3" class="content">
+                    
+                    <div class="row">
+
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Patrocinador" alt="" class="img-fluid"></div>
+                        <div class="col-md-8">
+                            <h5>
+                                Patrocinador
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+                        <br>
+                        <hr>
+                        <div class="col-md-8 text-end">
+                            <h5>
+                                Colaborador
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Colaborador" alt="" class="img-fluid"></div>
+                        <br>
+                        <hr>
+                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Voluntario" alt="" class="img-fluid"></div>
+                        <div class="col-md-8">
+                            <h5>
+                                Voluntario
+                            </h5>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem, cupiditate harum ipsum nihil veniam!</p>
+
+                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="content4" class="content">Contenido del Item 4</div>
+            </div>
         </div>
-
     </div>
 
-    <br><br><br><br>
-   
 
     <script>
         $(document).ready(function(){
-        $('.menu ul li').click(function(){
-            var target = $(this).data('target');
-            $('.item').hide();
-            $('#' + target).show();
-        });
+            $('.slider').slick({
+                infinite: true,
+                arrows:true,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
 
     
 
-  </body>
+</body>
+
 </html>

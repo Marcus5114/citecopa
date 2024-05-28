@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pruebas</title>
+    <title>CITECOPA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -16,266 +16,100 @@
     <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" rel="stylesheet">
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
     <style>
-        .underline {
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-        }
-
-        .underline::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            top: 0;
+        /* Style the video: 100% width and height to cover the entire window */
+        #myVideo {
+            position: fixed;
+            right: 0;
             bottom: 0;
-            left: -0.25em;
-            right: -0.25em;
-            background-color: #2f7efc;
-            transform-origin: bottom center;
-            transform: scaleY(0.1);
-            transition: all 0.1s ease-in-out;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -99;
         }
 
-        .underline:hover::before {
-            transform: scaleY(1);
-            background-color: #2f7efc80;
-        }
-
-        .content {
-            display: none;
-        }
-
-        #content1 {
-            display: block;
-        }
     </style>
+
+
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-body-secondary d-block d-md-none">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">CITECOPA</a>
+    <div class="container-fluid bg-white">
 
-            <button class="navbar-toggler d-print-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link " href="#">SOBRE NOSOTROS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">ACTIVIDADES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">PRENSA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">SOLUCIONES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">DONÁ</a>
+            </li>
+        </ul>
 
-            <div class="offcanvas w-75 offcanvas-start" tabindex="-1" id="menu"
-                aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <h3>CITECOPA</h3>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-
-                    <ul class="nav flex-column">
-                        <li class="nav-item py-2" data-target="content1">
-                            <span class="underline">INICIO</span>
-                        </li>
-                        <li class="nav-item py-2" data-target="content2">
-                            <span class="underline">NOSOTROS</span>
-                        </li>
-                        <li class="nav-item py-2" data-target="content3">
-                            <span class="underline">FORMÁ PARTE</span>
-                        </li>
-                        <li class="nav-item py-2" data-target="content4">
-                            <span class="underline">PRENSA</span>
-                        </li>
-
-                        <li class="nav-item py-2" data-target="content5">
-                            <span class="underline">DONÁ</span>
-                        </li>
-
-                        <li class="nav-item py-2" data-target="content6">
-                            <span class="underline">CONTACTO</span>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-
-
-
-        <div class="row" style="height: 100vh;">
-            <div class="col-md-3 d-none d-md-block border-end border-3 border-info-subtle">
-
-                <div class="sticky-top">
-                    <div class="p-5">
-                        <ul class="nav flex-column">
-                            <li class="nav-item py-2" data-target="content1">
-                                <span class="underline">INICIO</span>
-                            </li>
-                            <li class="nav-item py-2" data-target="content2">
-                                <span class="underline">NOSOTROS</span>
-                            </li>
-                            <li class="nav-item py-2" data-target="content3">
-                                <span class="underline">FORMÁ PARTE</span>
-                            </li>
-                            <li class="nav-item py-2" data-target="content4">
-                                <span class="underline">PRENSA</span>
-                            </li>
-
-                            <li class="nav-item py-2" data-target="content5">
-                                <span class="underline">DONÁ</span>
-                            </li>
-
-                            <li class="nav-item py-2" data-target="content6">
-                                <span class="underline">CONTACTO</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-9">
-                <div id="content1" class="content p-3">
-
-                    <div class="overflow-y-auto">
-                        <div class="text-center">
-
-                            <h1 class="display-3">CITECOPA</h1>
-                            <h3>Fundación de Ciencia y Tecnología <br> para la Comunidad Patagónica</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos optio ad aperiam
-                                perferendis, debitis quia molestias ratione ullam, delectus sunt omnis, quam labore est
-                                error illo in aliquam nisi enim.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque deleniti beatae quo
-                                asperiores reprehenderit! Beatae voluptatem quos, explicabo at quod autem iure enim et
-                                error, repellat quibusdam! Praesentium, laudantium.</p>
-                        </div>
-
-                        <hr>
-
-                        <div class="text-center">
-
-                            <img src="https://placehold.co/1920x400?text=Tu Camino Tecnológico" alt=""
-                                class="img-fluid">
-
-                        </div>
-
-                        <hr>
-
-                        <div class="text-center">
-
-                            <img src="https://placehold.co/1920x400?text=Calendario de Eventos" alt=""
-                                class="img-fluid">
-
-                        </div>
-
-                        <hr>
-
-                        <div class="text-center">
-
-                            <img src="https://placehold.co/1920x400?text=Acceso a Noticias" alt="" class="img-fluid">
-
-                        </div>
-                    </div>
-
-                </div>
-                <div id="content2" class="content p-3">
-
-                    <div class="text-center">
-
-                        <img src="https://placehold.co/1920x400?text=Banner" alt="" class="img-fluid">
-
-                    </div>
-                    <br>
-
-                    <div class="text-center">
-                        <h1>Titulo</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque impedit ut architecto hic
-                            dolorum doloremque velit non. Alias vitae voluptates consectetur architecto. Minima veniam
-                            non quibusdam consectetur perferendis molestiae cum.</p>
-                    </div>
-
-                </div>
-                <div id="content3" class="content p-3">
-
-                    <div class="row">
-
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Patrocinador" alt=""
-                                class="img-fluid"></div>
-                        <div class="col-md-8">
-                            <h5>
-                                Patrocinador
-                            </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
-                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
-                                cupiditate harum ipsum nihil veniam!</p>
-
-                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
-                        </div>
-                        <br>
-                        <hr>
-                        <div class="col-md-8 text-end">
-                            <h5>
-                                Colaborador
-                            </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
-                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
-                                cupiditate harum ipsum nihil veniam!</p>
-
-                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
-                        </div>
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Colaborador" alt=""
-                                class="img-fluid"></div>
-                        <br>
-                        <hr>
-                        <div class="col-md-4"><img src="https://placehold.co/400x400?text=Voluntario" alt=""
-                                class="img-fluid"></div>
-                        <div class="col-md-8">
-                            <h5>
-                                Voluntario
-                            </h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nisi blanditiis, illum
-                                quidem ad illo vel ipsam neque, voluptas nam corrupti molestias saepe obcaecati rem,
-                                cupiditate harum ipsum nihil veniam!</p>
-
-                            <button class="btn btn-outline-primary w-100">Formá Parte</button>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div id="content5" class="content">5</div>
-                <div id="content6" class="content">6</div>
-            </div>
-        </div>
     </div>
 
+    <div style="height: 100vh;">
 
-    <script>
-        $(document).ready(function () {
-            $('.nav-item').click(function () {
-                var target = $(this).data('target');
-                $('.content').fadeOut(
-                300); // Oculta todos los contenidos con una animación de desvanecimiento
-                $('#' + target).delay(500).fadeIn(
-                300); // Muestra el contenido correspondiente después de un retraso de 300 ms
-            });
-        });
-    </script>
+        
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <div class="p-5">
+
+        <div>
+            <a href="menu.html" class="btn btn-light shadow "><h1 class="p-2 m-0">ENTRÁ</h1></a>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="bg-white p-3">
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, praesentium soluta, tempore voluptatum ea vel asperiores adipisci fuga cumque iure ipsa modi dolor officiis beatae quas alias voluptatem! Perspiciatis, possimus!</h1>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, praesentium soluta, tempore voluptatum ea vel asperiores adipisci fuga cumque iure ipsa modi dolor officiis beatae quas alias voluptatem! Perspiciatis, possimus!</h1>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, praesentium soluta, tempore voluptatum ea vel asperiores adipisci fuga cumque iure ipsa modi dolor officiis beatae quas alias voluptatem! Perspiciatis, possimus!</h1>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, praesentium soluta, tempore voluptatum ea vel asperiores adipisci fuga cumque iure ipsa modi dolor officiis beatae quas alias voluptatem! Perspiciatis, possimus!</h1>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, praesentium soluta, tempore voluptatum ea vel asperiores adipisci fuga cumque iure ipsa modi dolor officiis beatae quas alias voluptatem! Perspiciatis, possimus!</h1>
+    </div>
+
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    
+
+
+    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
 
 
 
 </body>
+
 
 </html>
